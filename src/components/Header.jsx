@@ -2,10 +2,12 @@
 import { useState } from "react";
 import { Link } from 'react-router-dom'
 import { FiMenu } from "react-icons/fi";
-
+import logo from '../assets/logo/mustack.svg';
+import { useLocation } from 'react-router-dom';
 
 export default function Header() {
     const [open, setOpen] = useState(false);
+    const {pathname} = useLocation();
 
 
     const links = [
@@ -20,9 +22,9 @@ export default function Header() {
             <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
 
                 {/* Logo */}
-                <div className="text-2xl font-extrabold bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">
-                    Bhoopendra
-                </div>
+                <Link to={"/"} className="text-2xl font-extrabold bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">
+                    <img src={logo} alt="Logo" width="150" />
+                </Link>
 
                 {/* Desktop Nav */}
                 <nav className="hidden md:flex items-center gap-8 font-medium">
@@ -30,10 +32,9 @@ export default function Header() {
                         <Link
                             key={index}
                             to={item.path}
-                            className="relative text-gray-700 hover:text-indigo-600 transition
+                            className={`${pathname === item.path && "text-indigo-600 transition after:absolute after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0 after:bg-indigo-500 after:transition-all"} relative text-gray-700 hover:text-indigo-600 transition
               after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0
-              after:bg-indigo-500 after:transition-all hover:after:w-full"
-                        >
+              after:bg-indigo-500 after:transition-all hover:after:w-full`}>
                             {item.title}
                         </Link>
                     ))}

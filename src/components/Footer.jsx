@@ -1,4 +1,6 @@
 import { FaGithub, FaLinkedin, FaTwitter, FaHeart } from "react-icons/fa";
+import { Link } from 'react-router-dom';
+import logo from '../assets/logo/mustack.svg';
 
 export default function Footer() {
     return (
@@ -11,12 +13,11 @@ export default function Footer() {
 
                 {/* Brand */}
                 <div>
-                    <h2 className="text-3xl font-extrabold bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
-                        Bhoopendra
-                    </h2>
-                    <p className="mt-4 text-gray-400 leading-relaxed">
-                        Building modern, fast and beautiful web experiences using React,
-                        Tailwind CSS and clean design principles.
+                    <Link to={"/"} className="text-3xl font-extrabold bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+                        <img src={logo} alt="logo not found" />
+                    </Link>
+                    <p className="mt-4 text-gray-250 leading-relaxed">
+                        We are Developing and Building modern, fast and beautiful web experiences and clean design principles.
                     </p>
                 </div>
 
@@ -27,12 +28,13 @@ export default function Footer() {
                         {["Home", "About", "Projects", "Gallery", "Contact"].map(
                             (item) => (
                                 <li key={item}>
-                                    <a
-                                        href={`#/${item.toLowerCase()}`}
+                                    <Link
+                                        to={`#/${item.toLowerCase()}`}
+                                        onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
                                         className="hover:text-indigo-400 transition"
                                     >
                                         {item}
-                                    </a>
+                                    </Link>
                                 </li>
                             )
                         )}
@@ -65,9 +67,8 @@ export default function Footer() {
 
             {/* Bottom bar */}
             <div className="border-t border-white/10 text-center py-6 text-sm text-gray-400">
-                © {new Date().getFullYear()} Bhoopendra. Made with{" "}
-                <FaHeart className="inline text-pink-500 animate-pulse" /> using React &
-                Tailwind CSS
+                Copyright © {new Date().getFullYear()} {" | All Rights Reserved | "}
+                <Link to="#">Privacy Policy</Link>
             </div>
         </footer>
     );

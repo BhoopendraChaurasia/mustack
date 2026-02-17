@@ -23,8 +23,8 @@ export default function About() {
                 </section>
 
                 <section className="mt-20">
-                    <h2 className="text-3xl font-semibold mb-6 text-center">
-                        Meet the Team
+                    <h2 className="text-5xl mb-20 mb-6 text-center">
+                        Out Dedicated Team
                     </h2>
 
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
@@ -50,7 +50,7 @@ export default function About() {
                         ].map(({ name, role, bio, img }) => (
                             <div
                                 key={name}
-                                className="bg-slate-800 rounded-2xl p-6 flex flex-col items-center text-center shadow-lg hover:shadow-indigo-500/50 transition"
+                                className="bg-slate-800 rounded-2xl p-6 flex flex-col items-center text-center shadow-lg hover:shadow-indigo-300/50 transition hover:p-5"
                             >
                                 <img
                                     src={img}

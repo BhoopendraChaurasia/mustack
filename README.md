@@ -19,13 +19,13 @@ If you are developing a production application, we recommend using TypeScript wi
 ==============================================
 create repository in github 
 
-React_Vite_CICD_GitHub
+mustack
 
 
-echo "# React_Vite_CICD_GitHub" >> README.md
+echo "# mustack" >> README.md
 git init
 git add README.md
 git commit -m "first commit"
 git branch -M main
-git remote add origin https://github.com/BhoopendraChaurasia/React_Vite_CICD_GitHub.git
+git remote add origin https://github.com/BhoopendraChaurasia/mustack.git
 git push -u origin main
