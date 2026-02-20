@@ -1,9 +1,29 @@
 export default function About() {
+    const teams = [
+        {
+            name: "Ravi Teja",
+            role: "Project Manager & Lead Developer",
+            bio: "Passionate about building fast, scalable web applications with React and modern tools.",
+            img: "https://i.pravatar.cc/150?img=12",
+        },
+        {
+            name: "Aarti Sharma",
+            role: "UI/UX Designer",
+            bio: "Designs intuitive and beautiful user experiences focused on conversion.",
+            img: "https://i.pravatar.cc/150?img=32",
+        },
+        {
+            name: "Rahul Verma",
+            role: "Backend Engineer",
+            bio: "Expert in secure and scalable backend solutions with Node.js and databases.",
+            img: "https://i.pravatar.cc/150?img=47",
+        },
+    ];
     return (
         <main className="bg-slate-950 text-white min-h-screen px-6 py-24">
             <div className="max-w-5xl mx-auto">
 
-                <h1 className="text-5xl font-extrabold mb-8 text-center bg-gradient-to-r from-indigo-400 to-pink-400 bg-clip-text text-transparent">
+                <h1 className="text-6xl mb-8 font-semibold text-center bg-gradient-to-r from-indigo-400 to-pink-400 bg-clip-text text-transparent">
                     About Us
                 </h1>
 
@@ -28,26 +48,7 @@ export default function About() {
                     </h2>
 
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-                        {[
-                            {
-                                name: "Bhoopendra Chaurasia",
-                                role: "Founder & Lead Developer",
-                                bio: "Passionate about building fast, scalable web applications with React and modern tools.",
-                                img: "https://i.pravatar.cc/150?img=12",
-                            },
-                            {
-                                name: "Aarti Sharma",
-                                role: "UI/UX Designer",
-                                bio: "Designs intuitive and beautiful user experiences focused on conversion.",
-                                img: "https://i.pravatar.cc/150?img=32",
-                            },
-                            {
-                                name: "Rahul Verma",
-                                role: "Backend Engineer",
-                                bio: "Expert in secure and scalable backend solutions with Node.js and databases.",
-                                img: "https://i.pravatar.cc/150?img=47",
-                            },
-                        ].map(({ name, role, bio, img }) => (
+                        {teams.map(({ name, role, bio, img }) => (
                             <div
                                 key={name}
                                 className="bg-slate-800 rounded-2xl p-6 flex flex-col items-center text-center shadow-lg hover:shadow-indigo-300/50 transition hover:p-5"
