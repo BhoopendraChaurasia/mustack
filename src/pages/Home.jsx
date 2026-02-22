@@ -53,7 +53,7 @@ export default function Home() {
                             </button>
                         </div>
                     </div>
-                    <div className="bg-gradient-to-br from-gray-700 to-gray-800 hover:bg-gradient-to-br hover:from-gray-950 to-gray-100 rounded-3xl py-40 p-10 shadow-2xl hover:border-1">
+                    <div className="bg-gradient-to-br from-gray-800 to-gray-900 hover:bg-gradient-to-br hover:from-gray-950 to-gray-1000 rounded-3xl py-40 p-10 shadow-2xl hover:border-1">
                         <p className="text-2xl font-gradient-to-r from-red-400 to-pink-500 font-semibold">
                             “We are building, develop and designing don’t just build websites —
                             we create digital experiences that convert.”
