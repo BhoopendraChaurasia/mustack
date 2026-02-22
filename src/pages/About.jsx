@@ -51,7 +51,7 @@ export default function About() {
                         {teams.map(({ name, role, bio, img }) => (
                             <div
                                 key={name}
-                                className="bg-slate-800 rounded-2xl p-6 flex flex-col items-center text-center shadow-lg hover:shadow-indigo-300/50 transition hover:p-5"
+                                className="bg-slate-800 hover:border hover:bg-gradient-to-br from-zinc-700 to-gray-1000 rounded-2xl p-6 flex flex-col items-center text-center shadow-lg hover:shadow-indigo-300/50 transition hover:p-5"
                             >
                                 <img
                                     src={img}

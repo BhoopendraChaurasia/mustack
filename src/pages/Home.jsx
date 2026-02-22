@@ -1,4 +1,24 @@
+import { useNavigate } from 'react-router-dom';
 export default function Home() {
+
+
+    const services = [
+        {
+            title: "Web Development",
+            desc: "Fast, scalable, and modern websites built with the latest technologies."
+        },
+        {
+            title: "UI / UX Design",
+            desc: "Beautiful, intuitive designs focused on user experience and conversions."
+        },
+        {
+            title: "E-Commerce Solutions",
+            desc: "High-performance online stores with secure payment integration."
+        }
+    ];
+
+    const navigate = useNavigate();
+
     return (
         <div className="bg-slate-950 text-white overflow-hidden">
 
@@ -8,27 +28,36 @@ export default function Home() {
                 <div className="absolute -top-32 -left-32 w-96 h-96 bg-indigo-600/30 rounded-full blur-3xl" />
                 <div className="absolute top-1/2 -right-32 w-96 h-96 bg-pink-600/30 rounded-full blur-3xl" />
 
-                <div className="relative max-w-5xl text-center">
-                    <h1 className="text-5xl md:text-6xl font-extrabold leading-tight">
-                        We Build{" "}
-                        <span className="bg-gradient-to-r from-indigo-400 to-pink-400 bg-clip-text text-transparent">
-                            Powerful Websites
-                        </span>
-                        <br /> That Grow Your Business
-                    </h1>
+                {/* <div className="relative max-w-5xl text-center"> */}
+                <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+                    <div>
+                        <h1 className="text-5xl md:text-5xl font-extrabold leading-tight">
+                            We Build{" "}
+                            <span className="bg-gradient-to-r from-indigo-400 to-pink-700 bg-clip-text text-transparent">
+                                Powerful Websites
+                            </span>
+                            <br /> That Grow Your Business
+                        </h1>
 
-                    <p className="mt-6 text-lg text-slate-300">
-                        Premium web development services using modern technologies like
-                        React, Tailwind CSS, and scalable architectures.
-                    </p>
+                        <p className="mt-6 text-lg text-slate-300">
+                            Premium web development services using modern technologies like
+                            React, Tailwind CSS, and scalable architectures.
+                        </p>
 
-                    <div className="mt-10 flex justify-center gap-6 flex-wrap">
-                        <button className="px-8 py-4 rounded-full bg-gradient-to-r from-indigo-500 to-pink-500 font-semibold hover:scale-105 transition">
-                            Get Started
-                        </button>
-                        <button className="px-8 py-4 rounded-full border border-white/20 hover:bg-white/10 transition">
-                            View Portfolio
-                        </button>
+                        <div className="mt-10 flex justify-center gap-6 flex-wrap items-between">
+                            <button onClick={() => navigate("/contact")} className="px-8 py-4 rounded-full bg-gradient-to-r from-indigo-500 to-pink-500 font-semibold hover:scale-105 transition">
+                                Contact us
+                            </button>
+                            <button onClick={() => navigate("/services")} className="px-8 py-4 rounded-full border border-white/20 hover:bg-white/10 transition">
+                                Explore Services
+                            </button>
+                        </div>
+                    </div>
+                    <div className="bg-gradient-to-br from-gray-700 to-gray-800 hover:bg-gradient-to-br hover:from-gray-950 to-gray-100 rounded-3xl py-40 p-10 shadow-2xl hover:border-1">
+                        <p className="text-2xl font-gradient-to-r from-red-400 to-pink-500 font-semibold">
+                            “We are building, develop and designing don’t just build websites —
+                            we create digital experiences that convert.”
+                        </p>
                     </div>
                 </div>
             </section>
@@ -42,23 +71,10 @@ export default function Home() {
                     </p>
 
                     <div className="mt-16 grid gap-10 md:grid-cols-3">
-                        {[
-                            {
-                                title: "Web Development",
-                                desc: "Fast, scalable, and modern websites built with the latest technologies."
-                            },
-                            {
-                                title: "UI / UX Design",
-                                desc: "Beautiful, intuitive designs focused on user experience and conversions."
-                            },
-                            {
-                                title: "E-Commerce Solutions",
-                                desc: "High-performance online stores with secure payment integration."
-                            }
-                        ].map((service, i) => (
+                        {services.map((service, i) => (
                             <div
                                 key={i}
-                                className="bg-slate-800 rounded-2xl p-8 hover:-translate-y-3 transition shadow-lg"
+                                className="bg-slate-800 hover:border hover:bg-gradient-to-br from-zinc-800 to-blue-1000 rounded-2xl p-8 hover:-translate-y-3 transition shadow-lg"
                             >
                                 <h3 className="text-xl font-semibold text-indigo-400">
                                     {service.title}
@@ -82,10 +98,10 @@ export default function Home() {
                         </p>
 
                         <ul className="mt-8 space-y-4 text-slate-300">
-                            <li>⚡ High-performance & fast loading</li>
-                            <li>🎨 Modern & responsive UI</li>
-                            <li>🔒 Secure and scalable solutions</li>
-                            <li>🚀 SEO-friendly development</li>
+                            <li> High-performance & fast loading</li>
+                            <li> Modern & responsive UI</li>
+                            <li> Secure and scalable solutions</li>
+                            <li> SEO-friendly development</li>
                         </ul>
                     </div>
 

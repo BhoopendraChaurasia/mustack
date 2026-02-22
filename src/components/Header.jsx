@@ -9,7 +9,6 @@ export default function Header() {
     const [open, setOpen] = useState(false);
     const {pathname} = useLocation();
 
-
     const links = [
         { path: '/', title: "Home" }, 
         { path: '/about', title: "About" }, 
@@ -42,7 +41,7 @@ export default function Header() {
 
                 {/* CTA */}
                 <button className="hidden md:block px-5 py-2 rounded-full bg-gradient-to-r from-indigo-500 to-pink-500 text-white font-semibold shadow-lg hover:scale-105 transition">
-                    Contact
+                    Contact us
                 </button>
 
                 {/* Mobile Menu Button */}
