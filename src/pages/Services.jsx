@@ -43,7 +43,7 @@ export default function Services() {
             <div className="max-w-7xl mx-auto text-center">
 
                 {/* Page Heading */}
-                <h1 className="text-5xl font-extrabold mb-6 bg-gradient-to-r from-indigo-400 to-pink-400 bg-clip-text text-transparent">
+                <h1 className="text-6xl font-semibold mb-6 bg-gradient-to-r from-indigo-400 to-pink-400 bg-clip-text text-transparent">
                     Our Services
                 </h1>
                 <p className="text-slate-300 mb-16">

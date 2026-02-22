@@ -42,7 +42,7 @@ export default function Header() {
 
                 {/* CTA */}
                 <button className="hidden md:block px-5 py-2 rounded-full bg-gradient-to-r from-indigo-500 to-pink-500 text-white font-semibold shadow-lg hover:scale-105 transition">
-                    Hire Me
+                    Contact
                 </button>
 
                 {/* Mobile Menu Button */}

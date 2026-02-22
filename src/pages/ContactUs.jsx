@@ -1,10 +1,32 @@
+import { Link } from 'react-router-dom';
+
 export default function ContactUs() {
+
+    const links = [
+        {
+            title: 'GitHub',
+            url: 'https://github.com/BhoopendraChaurasia'
+        },
+        {
+            title: 'GitHub',
+            url: '/'
+        },
+        {
+            title: 'LinkedIn',
+            url: 'https://www.linkedin.com/company/112393296'
+        },
+        {
+            title: 'Twitter',
+            url: '/'
+        },
+    ]
+
     return (
         <div className="bg-slate-950 text-white min-h-screen px-6 py-24">
             <div className="max-w-4xl mx-auto">
 
                 {/* Page Heading */}
-                <h1 className="text-5xl font-extrabold text-center mb-8 bg-gradient-to-r from-indigo-400 to-pink-400 bg-clip-text text-transparent">
+                <h1 className="text-6xl font-semibold text-center mb-8 bg-gradient-to-r from-indigo-400 to-pink-400 bg-clip-text text-transparent">
                     Contact Us
                 </h1>
                 <p className="text-center text-slate-300 mb-12">
@@ -19,26 +41,28 @@ export default function ContactUs() {
                     <div className="space-y-6">
                         <div>
                             <h2 className="text-2xl font-semibold text-indigo-400 mb-2">Email</h2>
-                            <p className="text-slate-300">contact@bhoopendra.dev</p>
+                            <p className="text-slate-300">abc@gmail.com</p>
                         </div>
                         <div>
                             <h2 className="text-2xl font-semibold text-indigo-400 mb-2">Phone</h2>
-                            <p className="text-slate-300">+91 9876543210</p>
+                            <p className="text-slate-300">+91 8827975482</p>
                         </div>
                         <div>
                             <h2 className="text-2xl font-semibold text-indigo-400 mb-2">Location</h2>
-                            <p className="text-slate-300">New Delhi, India</p>
+                            <p className="text-slate-300">Hyderabad, India</p>
                         </div>
                         <div className="mt-6">
                             <h2 className="text-2xl font-semibold text-indigo-400 mb-2">Follow Us</h2>
                             <div className="flex gap-4">
-                                <a
-                                    href="#"
+                                {links.map(({title, url}) => <Link 
+                                    key={url}
+                                    to={url}
                                     className="px-4 py-2 bg-indigo-600 rounded-full hover:bg-indigo-500 transition"
                                 >
-                                    GitHub
-                                </a>
-                                <a
+                                    {title}
+                                </Link>)}
+                                
+                                {/* <a
                                     href="#"
                                     className="px-4 py-2 bg-pink-600 rounded-full hover:bg-pink-500 transition"
                                 >
@@ -49,7 +73,7 @@ export default function ContactUs() {
                                     className="px-4 py-2 bg-blue-600 rounded-full hover:bg-blue-500 transition"
                                 >
                                     Twitter
-                                </a>
+                                </a> */}
                             </div>
                         </div>
                     </div>

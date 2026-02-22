@@ -3,6 +3,13 @@ import { Link } from 'react-router-dom';
 import logo from '../assets/logo/mustack.svg';
 
 export default function Footer() {
+
+    const links = [
+        { Icon: FaGithub, link: "https://github.com/bhoopendrachaurasia" },
+        { Icon: FaLinkedin, link: "https://www.linkedin.com/company/112393296" },
+        { Icon: FaTwitter, link: "#" },
+    ];
+
     return (
         <footer className="relative mt-24 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-gray-300">
 
@@ -47,11 +54,8 @@ export default function Footer() {
                         Connect with me
                     </h3>
                     <div className="flex gap-4">
-                        {[
-                            { Icon: FaGithub, link: "https://github.com/bhoopendrachaurasia" },
-                            { Icon: FaLinkedin, link: "#" },
-                            { Icon: FaTwitter, link: "#" },
-                        ].map(({ Icon, link }, i) => (
+
+                        {links.map(({ Icon, link }, i) => (
                             <a
                                 key={i}
                                 href={link}
