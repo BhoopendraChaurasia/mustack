@@ -1,4 +1,6 @@
+import { BiSolidQuoteAltLeft, BiSolidQuoteAltRight } from "react-icons/bi";
 import { useNavigate } from 'react-router-dom';
+import { useState, useEffect } from 'react';
 export default function Home() {
 
 
@@ -17,8 +19,89 @@ export default function Home() {
         }
     ];
 
-    const navigate = useNavigate();
+    const tagsLines = [
+        {
+            style: "from- red - 400 to - pink - 500",
+            title: "We don’t just build websites — we create digital experiences that convert."
+        },
+        {
+            style: "from-green-400 to-blue-500", 
+            title: "We design and develop modern, scalable solutions for your business growth."
+        },
+        {
+            style: "from-red-400 to-cyan-500", 
+            title: "From idea to launch, we craft powerful web and AI-driven applications."
+        },
+        {
+            style: "from-megenta-400 to-pink-500",
+            title: "We build high-performance digital products that users love."
+        },
+        {
+            style: "from-blue-400 to-pink-500",
+            title: "Transforming your vision into smart, technology-driven solutions."
+        }
+    ];
 
+    const topicsList = [
+        "Web Development",
+        "AI Development",
+        "Backend Development",
+        "API Development"
+    ];
+
+    const shuffleArray = (arr) => {
+        return [...arr].sort(() => Math.random() - 0.5);
+    }
+
+    const [topics, setTopics] = useState(shuffleArray(topicsList));
+    const [topicIndex, setTopicIndex] = useState(0);
+    const [text, setText] = useState("");
+    const [charIndex, setCharIndex] = useState(0);
+
+    useEffect(() => {
+        const currentWord = topics[topicIndex];
+
+        if (charIndex < currentWord.length) {
+            const timeout = setTimeout(() => {
+                setText((prev) => prev + currentWord[charIndex]);
+                setCharIndex((prev) => prev + 1);
+            }, 100); // typing speed
+
+            return () => clearTimeout(timeout);
+        } else {
+            const delay = setTimeout(() => {
+                setText("");
+                setCharIndex(0);
+
+                if (topicIndex < topics.length - 1) {
+                    setTopicIndex((prev) => prev + 1);
+                } else {
+                    // reshuffle after all words
+                    setTopics(shuffleArray(topicsList));
+                    setTopicIndex(0);
+                }
+            }, 1000);
+
+            return () => clearTimeout(delay);
+        }
+    }, [charIndex, topicIndex, topics]);
+
+    const [tagIndex, setTagIndex] = useState(0);
+
+    useEffect(() => {
+        
+        const interval = setInterval(() => {
+            setTagIndex(prev => {
+                if(prev<tagsLines.length-1) return prev+1;
+                else return 0;
+            });
+        }, 3000);
+        
+        return () => clearInterval(interval);
+    }, [tagsLines.length]);
+
+    console.log(tagIndex);
+    
     return (
         <div className="bg-slate-950 text-white overflow-hidden">
 
@@ -31,13 +114,15 @@ export default function Home() {
                 {/* <div className="relative max-w-5xl text-center"> */}
                 <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
                     <div>
-                        <h1 className="text-5xl md:text-5xl font-extrabold leading-tight">
+                        <h3 className="text-3xl md:text-4xl font-extrabold leading-tight">
                             We Build{" "}
                             <span className="bg-gradient-to-r from-indigo-400 to-pink-700 bg-clip-text text-transparent">
-                                Powerful Websites
-                            </span>
-                            <br /> That Grow Your Business
-                        </h1>
+                                Next-Gen Tech
+                            </span>{" "}
+                            <span className="text-green-400">{text}</span>
+                            <br />
+                            That Powers Your Business Growth
+                        </h3>
 
                         <p className="mt-6 text-lg text-slate-300">
                             Premium web development services using modern technologies like
@@ -53,11 +138,14 @@ export default function Home() {
                             </button>
                         </div>
                     </div>
-                    <div className="bg-gradient-to-br from-gray-800 to-gray-900 hover:bg-gradient-to-br hover:from-gray-950 to-gray-1000 rounded-3xl py-40 p-10 shadow-2xl hover:border-1">
-                        <p className="text-2xl font-gradient-to-r from-red-400 to-pink-500 font-semibold">
-                            “We are building, develop and designing don’t just build websites —
-                            we create digital experiences that convert.”
+                    <div className="bg-gradient-to-br hover:border-emerald-500/40 from-gray-800 to-gray-900 hover:bg-gradient-to-br hover:from-gray-950 to-gray-1000 rounded-3xl py-40 p-10 shadow-2xl hover:border-[0.1px]">
+                        <BiSolidQuoteAltLeft size={30} className="text-gray-500" />
+                        <p className={`text-2xl font-semibold ${tagsLines[tagIndex].style}`}>
+                            {tagsLines[tagIndex].title}
                         </p>
+                        <div className="flex justify-end">
+                            <BiSolidQuoteAltRight size={30} className="text-gray-500" />
+                        </div>
                     </div>
                 </div>
             </section>
@@ -74,7 +162,7 @@ export default function Home() {
                         {services.map((service, i) => (
                             <div
                                 key={i}
-                                className="bg-slate-800 hover:border hover:bg-gradient-to-br from-zinc-800 to-blue-1000 rounded-2xl p-8 hover:-translate-y-3 transition shadow-lg"
+                                className="bg-slate-800 hover:border-[0.1px] hover:bg-gradient-to-br from-zinc-800 to-blue-1000 rounded-2xl p-8 hover:-translate-y-3 transition shadow-lg"
                             >
                                 <h3 className="text-xl font-semibold text-indigo-400">
                                     {service.title}

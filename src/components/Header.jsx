@@ -31,6 +31,7 @@ export default function Header() {
                         <Link
                             key={index}
                             to={item.path}
+                            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
                             className={`${pathname === item.path && "text-indigo-600 transition after:absolute after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0 after:bg-indigo-500 after:transition-all"} relative text-gray-700 hover:text-indigo-600 transition
               after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0
               after:bg-indigo-500 after:transition-all hover:after:w-full`}>

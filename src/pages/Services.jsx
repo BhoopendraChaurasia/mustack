@@ -55,7 +55,7 @@ export default function Services() {
                     {services.map((service, idx) => (
                         <div
                             key={idx}
-                            className="bg-gray-900 hover:bg-gradient-to-r from-gray-800 to-gray-1000 hover:border rounded-3xl p-8 shadow-lg hover:shadow-indigo-500/50 transition transform hover:-translate-y-2"
+                            className="bg-gray-900 hover:bg-gradient-to-br hover:from-gray-950 to-gray-1000 hover:border-[0.1px] rounded-3xl p-8 shadow-lg hover:shadow-indigo-500/50 transition transform hover:-translate-y-2"
                         >
                             <div className="text-4xl mb-4">{service.icon}</div>
                             <h2 className="text-2xl font-semibold text-indigo-400 mb-2">

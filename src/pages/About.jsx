@@ -1,3 +1,6 @@
+import { BiSolidQuoteAltLeft, BiSolidQuoteAltRight } from "react-icons/bi";
+import { FaCheckCircle } from "react-icons/fa";
+
 export default function About() {
     const teams = [
         {
@@ -19,31 +22,95 @@ export default function About() {
             img: "https://i.pravatar.cc/150?img=47",
         },
     ];
+
     return (
         <main className="bg-slate-950 text-white min-h-screen px-6 py-24">
-            <div className="max-w-5xl mx-auto">
+            <div className="max-w-8xl mx-auto">
 
-                <h1 className="text-6xl mb-8 font-semibold text-center bg-gradient-to-r from-indigo-400 to-pink-400 bg-clip-text text-transparent">
+                <h1 className="text-6xl mb-7 font-semibold text-center bg-gradient-to-r from-indigo-400 to-pink-400 bg-clip-text text-transparent">
                     About Us
                 </h1>
 
-                <section className="space-y-8 text-center text-slate-300">
-                    <p className="text-lg leading-relaxed">
-                        At <strong>Bhoopendra Web Solutions</strong>, we’re passionate about crafting beautiful,
-                        performant websites that help businesses thrive online.
-                    </p>
-                    <p className="text-lg leading-relaxed">
-                        Founded by a team of dedicated developers and designers, our mission is to empower
-                        your brand through cutting-edge technology and creative design.
-                    </p>
-                    <p className="text-lg leading-relaxed">
-                        Whether you need a sleek portfolio, a robust e-commerce platform, or a custom web app,
-                        we’ve got you covered from start to finish.
-                    </p>
+
+                <section className="space-y-2 text-slate-300">
+
+                    <div className="max-w-7xl mx-auto px-6 py-20 
+                grid lg:grid-cols-2 gap-16 items-center">
+
+                        {/* LEFT SIDE */}
+                        <div className="max-w-xl">
+
+                            <h2 className="text-4xl md:text-5xl font-bold 
+                   bg-gradient-to-r from-white to-gray-400 
+                   bg-clip-text text-transparent">
+                                Why Choose Our Team?
+                            </h2>
+
+                            <p className="mt-6 text-lg text-slate-400 leading-relaxed">
+                                We build high-performance digital products focused on scalability,
+                                reliability, and long-term business growth — engineered to perform
+                                flawlessly at every stage.
+                            </p>
+
+                            <ul className="mt-10 space-y-5">
+                                {[
+                                    "High-performance & lightning-fast loading",
+                                    "Modern, responsive & user-focused UI",
+                                    "Secure and scalable architecture",
+                                    "SEO-optimized development standards",
+                                ].map((item, index) => (
+                                    <li
+                                        key={index}
+                                        className="flex items-start gap-4 p-5 rounded-2xl 
+                     bg-gradient-to-br from-gray-900/80 to-gray-800/80
+                     border border-gray-800
+                     hover:border-emerald-500/40
+                     hover:shadow-lg hover:shadow-emerald-500/10
+                     transition-all duration-300"
+                                    >
+                                        <FaCheckCircle className="text-emerald-400 mt-1 shrink-0" size={20} />
+                                        <span className="text-slate-200">{item}</span>
+                                    </li>
+                                ))}
+                            </ul>
+
+                        </div>
+
+                        {/* RIGHT SIDE - QUOTE CARD */}
+                        <div className="relative group">
+
+                            <div className="absolute inset-0 bg-emerald-500/10 blur-3xl opacity-0 
+                    group-hover:opacity-100 transition duration-500 rounded-3xl"></div>
+
+                            <div className="relative bg-gradient-to-br from-gray-900 to-gray-800
+                    border border-gray-800 
+                    group-hover:border-emerald-500/40
+                    rounded-3xl p-12 shadow-2xl 
+                    flex flex-col justify-between min-h-[320px]
+                    transition-all duration-300">
+
+                                <BiSolidQuoteAltLeft size={30} className="text-gray-500" />
+
+                                <p className="text-2xl md:text-3xl font-semibold text-white 
+                    leading-relaxed my-8">
+                                    We don’t just build websites —
+                                    <br />
+                                    we create digital experiences that convert.
+                                </p>
+
+                                <div className="flex justify-end">
+                                    <BiSolidQuoteAltRight size={30} className="text-gray-500" />
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
                 </section>
 
                 <section className="mt-20">
-                    <h2 className="text-5xl mb-20 mb-6 text-center">
+                    <h2 className="text-5xl mb-30 mb-6 text-center">
                         Out Dedicated Team
                     </h2>
 
@@ -51,7 +118,7 @@ export default function About() {
                         {teams.map(({ name, role, bio, img }) => (
                             <div
                                 key={name}
-                                className="bg-slate-800 hover:border hover:bg-gradient-to-br from-zinc-700 to-gray-1000 rounded-2xl p-6 flex flex-col items-center text-center shadow-lg hover:shadow-indigo-300/50 transition hover:p-5"
+                                className="bg-gradient-to-r from-gray-900 to-gray-850 hover:border-[0.1px] hover:bg-gradient-to-br hover:from-gray-950 to-gray-1000 rounded-2xl p-6 flex flex-col items-center text-center shadow-lg hover:shadow-indigo-300/50 transition hover:p-5"
                             >
                                 <img
                                     src={img}
