@@ -20,7 +20,10 @@ export default function Footer() {
 
                 {/* Brand */}
                 <div>
-                    <Link to={"/"} className="text-3xl font-extrabold bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+                    <Link 
+                        to={"/"} 
+                        onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+                        className="text-3xl font-extrabold bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
                         <img src={logo} alt="logo not found" />
                     </Link>
                     <p className="mt-4 text-gray-250 leading-relaxed">

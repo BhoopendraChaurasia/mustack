@@ -6,20 +6,34 @@ import Home from './pages/Home'
 import About from './pages/About'
 import Services from './pages/Services'
 import ContactUs from './pages/ContactUs'
+import AIService from './pages/AIService'
+import Projects from './pages/Projects'
+import MLService from './pages/MLService'
+import IotService from './pages/IotService'
+import AppServices from './pages/AppServices'
+import WebServices from './pages/WebServices'
+import EcommerceServices from './pages/EcommerceServices'
 import { HashRouter as Router, Routes, Route } from 'react-router-dom'
 
 function App() {
   return (
     <>
       <Router>
-      <Header />
-          <Routes>
-            <Route path="/" element={<Home />}></Route>
-            <Route path="/about" element={<About />}></Route>
-            <Route path="/services" element={<Services />}></Route>
-            <Route path="/contact" element={<ContactUs />}></Route >
-          </Routes>
-      <Footer />
+        <Header />
+        <Routes>
+          <Route path="/" element={<Home />}></Route>
+          <Route path="/about" element={<About />}></Route>
+          <Route path="/projects" element={<Projects />}></Route>
+          <Route path="/services" element={<Services />}></Route>
+          <Route path="/ai-service" element={<AIService />} />
+          <Route path="/machine-learning-service" element={<MLService />} />
+          <Route path="/iot-service" element={<IotService />} />
+          <Route path="/app-service" element={<AppServices />} />
+          <Route path="/web-service" element={<WebServices />} />
+          <Route path="/ecommerce-service" element={<EcommerceServices />} />
+          <Route path="/contact" element={<ContactUs />}></Route >
+        </Routes>
+        <Footer />
       </Router>
     </>
   )
