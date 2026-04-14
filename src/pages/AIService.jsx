@@ -1,22 +1,31 @@
-export default function AIService() {
+
+import { CategoryService } from '../components/CategoryService';
+import { services } from '../data';
+import { useLocation } from "react-router-dom";
+
+export default function ServicesSection() {
+
+
+    const { pathname } = useLocation();
+
+    const { image, title } = services.find(service => service.path === pathname);
+    
     return (
-        <div className="bg-slate-950 text-white min-h-screen px-6 py-24">
-            <div className="max-w-7xl mx-auto text-center">
+        <section className="bg-black py-16 px-6">
+            <div className="max-w-7xl mx-auto grid lg:grid-cols-3 gap-8 items-center">
 
-                {/* Page Heading */}
-                <h1 className="text-6xl font-semibold mb-6 bg-gradient-to-r from-indigo-400 to-pink-400 bg-clip-text text-transparent">
-                    Our Services
-                </h1>
-                <p className="text-slate-300 mb-16">
-                    We provide a wide range of services to help your business succeed online.
-                </p>
-
-                {/* Services Grid */}
-                <div className="grid md:grid-cols-3 gap-10">
-                    <h1>AI Services</h1>
+                {/* LEFT IMAGE (2/3) */}
+                <div className="lg:col-span-2 rounded-3xl overflow-hidden h-[300px] md:h-[400px] lg:h-[500px]">
+                    <img
+                        src={image}
+                        alt={title}
+                        className="w-full h-full object-cover"
+                    />
                 </div>
 
+                {/* RIGHT PANEL (1/3) */}
+                <CategoryService />
             </div>
-        </div>
+        </section>
     );
 }

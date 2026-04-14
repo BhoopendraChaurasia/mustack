@@ -1,42 +1,7 @@
+import {services} from "../data";
+
+
 export default function Services() {
-    const services = [
-        {
-            title: "Web Development",
-            description:
-                "We build fast, scalable, and modern websites using React, Tailwind CSS, and other cutting-edge technologies.",
-            icon: "💻",
-        },
-        {
-            title: "UI/UX Design",
-            description:
-                "We create intuitive, beautiful, and conversion-focused designs for web and mobile applications.",
-            icon: "🎨",
-        },
-        {
-            title: "E-Commerce Solutions",
-            description:
-                "High-performing online stores with secure payment gateways and smooth shopping experiences.",
-            icon: "🛒",
-        },
-        {
-            title: "SEO Optimization",
-            description:
-                "We optimize your website for search engines to increase visibility and traffic.",
-            icon: "🚀",
-        },
-        {
-            title: "Backend Development",
-            description:
-                "Secure and scalable server-side applications using Node.js, Express, and databases.",
-            icon: "🗄️",
-        },
-        {
-            title: "Consulting & Strategy",
-            description:
-                "We provide expert advice to help you plan and implement your digital strategy successfully.",
-            icon: "📈",
-        },
-    ];
 
     return (
         <div className="bg-slate-950 text-white min-h-screen px-6 py-24">

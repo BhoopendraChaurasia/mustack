@@ -5,49 +5,15 @@ import { FiMenu } from "react-icons/fi";
 import logo from '../assets/logo/mustack.svg';
 import { useLocation, useNavigate } from 'react-router-dom';
 import AIService from '../pages/AIService';
+import { services, links }from '../data';
 
 export default function Header() {
     const [open, setOpen] = useState(false);
     const {pathname} = useLocation();
 
-    const services = [
-        {
-            index: true
-        },
-        {
-            path: '/ai-service',
-            element: <AIService />,
-            title: 'AI development'
-        },
-        {
-            path: '/machine-learning-service',
-            title: 'Machine Learning'
-        },
-        {
-            path: '/iot-service',
-            title: 'IoT Solutions'
-        },
-        {
-            path: '/app-service',
-            title: 'Mobile app delopment'
-        },
-        {
-            path: '/web-service',
-            title: 'Web designing and development'
-        },
-        {
-            path: '/ecommerce-service',
-            title: 'E-commerce development'
-        },
-    ]
+    
 
-    const links = [
-        { path: '/', title: "Home" }, 
-        { path: '/about', title: "About" },
-        { path: '/projects', title: "Projects" }, 
-        { path: '/services', title: "Services", children: services}, 
-        { path: '/contact', title: "Contact" }
-    ];
+   
 
     const [openMenu, setOpenMenu] = useState(null);
     const [subMenu, setSubMenu] = useState(null);

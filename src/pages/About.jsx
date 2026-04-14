@@ -1,28 +1,10 @@
 import { BiSolidQuoteAltLeft, BiSolidQuoteAltRight } from "react-icons/bi";
 import { FaCheckCircle } from "react-icons/fa";
+import { teams} from '../data';
+
 
 export default function About() {
-    const teams = [
-        {
-            name: "Ravi Teja",
-            role: "Project Manager & Lead Developer",
-            bio: "Passionate about building fast, scalable web applications with React and modern tools.",
-            img: "https://i.pravatar.cc/150?img=12",
-        },
-        {
-            name: "Aarti Sharma",
-            role: "UI/UX Designer",
-            bio: "Designs intuitive and beautiful user experiences focused on conversion.",
-            img: "https://i.pravatar.cc/150?img=32",
-        },
-        {
-            name: "Rahul Verma",
-            role: "Backend Engineer",
-            bio: "Expert in secure and scalable backend solutions with Node.js and databases.",
-            img: "https://i.pravatar.cc/150?img=47",
-        },
-    ];
-
+    
     return (
         <main className="bg-slate-950 text-white min-h-screen px-6 py-24">
             <div className="max-w-8xl mx-auto">

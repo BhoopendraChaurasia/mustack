@@ -2,23 +2,62 @@ import { BiSolidQuoteAltLeft, BiSolidQuoteAltRight } from "react-icons/bi";
 import { useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import PortfolioSlider from "../components/PortfolioSlider";
+import { FaLocationArrow } from "react-icons/fa";
 
 
 export default function Home() {
 
+    const navigate = useNavigate();
+
+    const handleNavigate = path => {
+        
+        navigate(path);
+        
+    }
+
     const services = [
         {
             title: "Web Development",
-            desc: "Fast, scalable, and modern websites built with the latest technologies."
+            path: "/web-service",
+            description:
+                "We build fast, scalable, and modern websites using React, Tailwind CSS, and other cutting-edge technologies.",
+            icon: "💻",
         },
         {
-            title: "UI / UX Design",
-            desc: "Beautiful, intuitive designs focused on user experience and conversions."
+            title: "UI/UX Design",
+            path: "/web-service",
+            description:
+                "We create intuitive, beautiful, and conversion-focused designs for web and mobile applications.",
+            icon: "🎨",
         },
         {
             title: "E-Commerce Solutions",
-            desc: "High-performance online stores with secure payment integration."
-        }
+            path: "/ecommerce-service",
+            description:
+                "High-performing online stores with secure payment gateways and smooth shopping experiences.",
+            icon: "🛒",
+        },
+        {
+            title: "SEO Optimization",
+            path: "/ecommerce-service",
+            description:
+                "We optimize your website for search engines to increase visibility and traffic.",
+            icon: "🚀",
+        },
+        {
+            title: "Backend Development",
+            path: "/ecommerce-service",
+            description:
+                "Secure and scalable server-side applications using Node.js, Express, and databases.",
+            icon: "🗄️",
+        },
+        {
+            title: "Consulting & Strategy",
+            path: "/ecommerce-service",
+            description:
+                "We provide expert advice to help you plan and implement your digital strategy successfully.",
+            icon: "📈",
+        },
     ];
 
     const tagsLines = [
@@ -59,6 +98,7 @@ export default function Home() {
     const [topicIndex, setTopicIndex] = useState(0);
     const [text, setText] = useState("");
     const [charIndex, setCharIndex] = useState(0);
+    const [arrow, setArrow] = useState("");
 
     useEffect(() => {
         const currentWord = topics[topicIndex];
@@ -101,9 +141,6 @@ export default function Home() {
         
         return () => clearInterval(interval);
     }, [tagsLines.length]);
-
-
-    const navigate = useNavigate();
 
     return (
         <div className="bg-slate-950 text-white overflow-hidden">
@@ -198,7 +235,94 @@ export default function Home() {
                             “We don’t just build websites —
                             we create digital experiences that convert.”
                         </p>
+                        
                     </div>
+                    
+                </div>
+                <div 
+                    className="flex mt-10" 
+                    onMouseEnter={() => {
+                        setArrow("transition delay-150 duration-300 ease-in-out hover:rotate-45");
+                    }} 
+                    onClick={() => navigate("/about")}
+                >
+                    <button
+                        
+                        className="mx-10 px-8 py-4 rounded-full bg-gradient-to-r from-indigo-500 to-pink-500 font-semibold hover:scale-105 transition"
+                    >
+                        More About
+                    </button>
+                    <button className={`px-5 py-4 bg-green-500 rounded-full ${arrow}`}>
+                        <FaLocationArrow />
+                    </button>
+                </div>
+            </section>
+            {/* Our Services */}
+            <section className="py-24 bg-slate-950">
+                <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+                    <div>
+                        <h2 className="text-4xl font-bold">
+                            Our Services
+                        </h2>
+                        <p className="mt-6 text-5xl md:text-5xl text-white/90">
+                            We are provide diffrent type of digital services for your brand<br />
+                            <span className="font-bold bg-gradient-to-br from-indigo-500 to-pink-500 bg-clip-text text-transparent">
+                                business of client, performance, and long-term success
+                            </span><br /> for your business.
+                        </p>
+
+                        <ul className="mt-8 space-y-4 text-slate-300">
+                            <li> High-performance & fast loading</li>
+                            <li> Modern & responsive UI</li>
+                            <li> Secure and scalable solutions</li>
+                            <li> SEO-friendly development</li>
+                        </ul>
+                    </div>
+
+                    <div
+                        className="flex mt-10"
+                        onMouseEnter={() => {
+                            setArrow("transition delay-150 duration-300 ease-in-out hover:rotate-45");
+                        }}
+                        onClick={() => navigate("/services")}
+                    >
+                        <button
+
+                            className="mx-10 px-8 py-4 rounded-full bg-gradient-to-r from-indigo-500 to-pink-500 font-semibold hover:scale-105 transition"
+                        >
+                            All Services
+                        </button>
+                        <button className={`px-5 py-4 bg-green-500 rounded-full ${arrow}`}>
+                            <FaLocationArrow />
+                        </button>
+                    </div>
+                </div>
+                <div className="my-30 mx-5 md:mx-10 grid md:grid-cols-3  gap-10">
+                    {services.map((service, idx) => (
+                        <div
+                            key={idx}
+                            className="bg-gray-900 hover:bg-gradient-to-br hover:from-gray-950 to-gray-1000 hover:border-[0.1px] rounded-3xl p-8 shadow-lg hover:shadow-indigo-500/50 transition transform hover:-translate-y-2"
+                        >
+                            <div className="text-4xl mb-4 flex items-center">
+  {service.icon}
+  <div 
+    className="ml-auto cursor-pointer"
+    onClick={
+        () => {
+            handleNavigate(service.path);
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        }
+    }
+  >
+    <FaLocationArrow />
+  </div>
+</div>
+                            <h2 className="text-2xl font-semibold text-indigo-400 mb-2">
+                                {service.title}
+                            </h2>
+                            <p className="text-slate-300">{service.description}</p>
+                        </div>
+                    ))}
                 </div>
             </section>
             {/* WHY US */}
