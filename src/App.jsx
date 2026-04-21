@@ -12,6 +12,8 @@ import MLService from './pages/MLService'
 import IotService from './pages/IotService'
 import AppServices from './pages/AppServices'
 import WebServices from './pages/WebServices'
+import UiUxServices from './pages/UiUx'
+import BackendServices from './pages/backendServices'
 import EcommerceServices from './pages/EcommerceServices'
 import { HashRouter as Router, Routes, Route } from 'react-router-dom'
 
@@ -30,6 +32,8 @@ function App() {
           <Route path="/iot-service" element={<IotService />} />
           <Route path="/app-service" element={<AppServices />} />
           <Route path="/web-service" element={<WebServices />} />
+          <Route path="/backend-service" element={<BackendServices />} />
+          <Route path="/uiux-service" element={<UiUxServices />} />
           <Route path="/ecommerce-service" element={<EcommerceServices />} />
           <Route path="/contact" element={<ContactUs />}></Route >
         </Routes>
