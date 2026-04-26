@@ -1,4 +1,10 @@
 import { useEffect, useRef, useState } from "react";
+
+import mustack from "../assets/images/slider/mustack.png";
+import myclnq from "../assets/images/slider/myclnq.png";
+import prologify from "../assets/images/slider/prologify.png";
+import trigoelectric from "../assets/images/slider/trigoelectric.png";
+import jurisverse from "../assets/images/slider/jurisverse.png";
 import img1 from "../assets/images/slider/img1.jpg";
 import img2 from "../assets/images/slider/img2.jpg";
 import img3 from "../assets/images/slider/img3.jpg";
@@ -9,12 +15,11 @@ import { IoArrowBackCircleOutline, IoArrowForwardCircleOutline } from "react-ico
 
 
 const images = [
-    img1,
-    img2,
-    img3,
-    img4,
-    img5,
-    img6
+    mustack,
+    myclnq,
+    prologify,
+    trigoelectric,
+    jurisverse,
 ];
 
 export default function PortfolioSlider() {
@@ -114,7 +119,7 @@ export default function PortfolioSlider() {
                             <img
                                 src={img}
                                 alt=""
-                                className={`w-[320px] h-[380px] object-cover rounded-2xl transition-all duration-500
+                                className={`w-[600px] h-[270px] object-cover rounded-2xl transition-all duration-500
                   ${isActive ? "border-2 border-green-400 shadow-[0_0_40px_#22c55e]" : ""}
                 `}
                             />

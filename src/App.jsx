@@ -10,8 +10,8 @@ import AIService from './pages/AIService'
 import Projects from './pages/Projects'
 import MLService from './pages/MLService'
 import IotService from './pages/IotService'
-import AppServices from './pages/AppServices'
-import WebServices from './pages/WebServices'
+import AppService from './pages/AppService'
+import WebService from './pages/WebService'
 import UiUxServices from './pages/UiUx'
 import BackendServices from './pages/backendServices'
 import EcommerceServices from './pages/EcommerceServices'
@@ -30,8 +30,8 @@ function App() {
           <Route path="/ai-service" element={<AIService />} />
           <Route path="/machine-learning-service" element={<MLService />} />
           <Route path="/iot-service" element={<IotService />} />
-          <Route path="/app-service" element={<AppServices />} />
-          <Route path="/web-service" element={<WebServices />} />
+          <Route path="/app-service" element={<AppService />} />
+          <Route path="/web-service" element={<WebService />} />
           <Route path="/backend-service" element={<BackendServices />} />
           <Route path="/uiux-service" element={<UiUxServices />} />
           <Route path="/ecommerce-service" element={<EcommerceServices />} />

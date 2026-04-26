@@ -38,7 +38,7 @@ export default function ServicesSection() {
                         </h2>
 
                         <p className="text-gray-300 max-w-2xl text-sm md:text-base leading-relaxed">
-                            Alphawizz, one of India's largest AI solution providers, has expert engineers that help automate businesses using AI, machine learning, and proprietary ideas.
+                            We are moving to new era with AI development, blockchain, crypto and Cyber Security and Cyber Attacks
                         </p>
 
                         {/* ACCORDION */}

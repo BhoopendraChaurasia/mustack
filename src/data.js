@@ -1,3 +1,8 @@
+import uiux from "./assets/images/uiux1.jpg";
+import ecommerce from "./assets/images/ecommerce.jpg";
+import iot from "./assets/images/iot.png";
+import mobileapp from "./assets/images/mobileapp.png";
+
 export const accordionsWeb = [
     {
         title: "Custom Website Development",
@@ -34,7 +39,6 @@ export const accordionsAI = [
         content: "Build predictive and data-driven ML models."
     }
 ];
-
 export const accordionsML = [
     {
         title: "Custom Machine Learning Solutions",
@@ -55,6 +59,28 @@ export const accordionsML = [
     {
         title: "AI Model Deployment",
         content: "Deploy machine learning models into production environments with scalable APIs and real-time performance."
+    }
+];
+export const accordionsIOT = [
+    {
+        title: "Custom IoT Solutions",
+        content: "We design and develop tailored IoT systems to connect devices, automate processes, and solve real-world business challenges."
+    },
+    {
+        title: "Smart Device Integration",
+        content: "Seamlessly integrate sensors, microcontrollers, and connected devices for efficient data collection and communication."
+    },
+    {
+        title: "Real-Time Data Monitoring",
+        content: "Track and monitor device data in real time with dashboards and alerts for better decision-making and control."
+    },
+    {
+        title: "Edge Computing & Optimization",
+        content: "Process data closer to devices to reduce latency, improve performance, and optimize bandwidth usage."
+    },
+    {
+        title: "IoT Deployment & Maintenance",
+        content: "Deploy scalable IoT solutions with secure connectivity, cloud integration, and ongoing system support."
     }
 ];
 export const accordionsUIUX = [
@@ -123,6 +149,28 @@ export const accordionsBackend = [
         content: "We deploy and manage backend systems on cloud platforms ensuring scalability, uptime, and performance."
     }
 ];
+export const accordionsMobileApp = [
+    {
+        title: "Custom Mobile App Development",
+        content: "We build tailored mobile applications for Android and iOS that align with your business goals and deliver seamless user experiences."
+    },
+    {
+        title: "UI/UX Design",
+        content: "Design intuitive, engaging, and user-friendly interfaces that enhance usability and improve customer satisfaction."
+    },
+    {
+        title: "Cross-Platform Development",
+        content: "Develop high-performance apps using frameworks like React Native and Flutter to ensure consistency across multiple platforms."
+    },
+    {
+        title: "App Performance Optimization",
+        content: "Optimize app speed, responsiveness, and stability to provide smooth performance even under heavy usage."
+    },
+    {
+        title: "App Deployment & Maintenance",
+        content: "Handle app store deployment, updates, and ongoing maintenance to keep your application secure, up-to-date, and scalable."
+    }
+];
 export const services = [
     {
         "path": "/web-service",
@@ -139,7 +187,7 @@ export const services = [
         "title": "UI/UX Design",
         "description": "We create intuitive, beautiful, and conversion-focused designs for web and mobile applications.",
         "icon": "🎨",
-        "image": "" || null,
+        "image": uiux ?? null,
         "accordion": accordionsUIUX ?? null
     },
     {
@@ -148,23 +196,23 @@ export const services = [
         "title": "E-commerce Solutions",
         "description": "High-performing online stores with secure payment gateways and smooth shopping experiences.",
         "icon": "🛒",
-        "image": "" || null,
+        "image": ecommerce ?? null,
         "accordion": accordionsEcommerce 
     },
-    {
-        "path": "/seo-service",
-        "element": "<SeoService />",
-        "title": "SEO Optimization",
-        "description": "We optimize your website for search engines to increase visibility and traffic.",
-        "icon": "🚀"
-    },
+    // {
+    //     "path": "/seo-service",
+    //     "element": "<SeoService />",
+    //     "title": "SEO Optimization",
+    //     "description": "We optimize your website for search engines to increase visibility and traffic.",
+    //     "icon": "🚀"
+    // },
     {
         "path": "/backend-service",
         "element": "<BackendService />",
         "title": "Backend Development",
         "description": "Secure and scalable server-side applications using Node.js, Express, and databases.",
         "icon": "🗄️",
-        "image": "https://www.shutterstock.com/image-photo/web-development-hands-robot-human-260nw-2614142709.jpg" || null,
+        "image": "https://www.shutterstock.com/image-photo/web-development-hands-robot-human-260nw-2614142709.jpg" ?? null,
         "accordion": accordionsBackend
 
     },
@@ -199,14 +247,18 @@ export const services = [
         "element": "<IotService />",
         "title": "IoT Solutions",
         "description": "We provide expert advice to help you plan and implement your digital strategy successfully.",
-        "icon": "📈"
+        "icon": "📈",
+        "image": iot ?? null,
+        "accordion": accordionsIOT ?? null
     },
     {
         "path": "/app-service",
-        "element": "<IotService />",
+        "element": "<AppService />",
         "title": "Mobile app delopment",
         "description": "We provide expert advice to help you plan and implement your digital strategy successfully.",
-        "icon": "📈"
+        "icon": "📈",
+        "image": mobileapp ?? null,
+        "accordion": accordionsMobileApp ?? null
     }
 ];
 export const links = [
@@ -216,8 +268,6 @@ export const links = [
     { "path": "/services", "title": "Services", "children": services },
     { "path": "/contact", "title": "Contact" }
 ];
-
-
 export const teams = [
     {
         name: "Ravi Teja",

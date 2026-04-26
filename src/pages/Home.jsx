@@ -10,9 +10,9 @@ export default function Home() {
     const navigate = useNavigate();
 
     const handleNavigate = path => {
-        
+
         navigate(path);
-        
+
     }
 
     const services = [
@@ -66,11 +66,11 @@ export default function Home() {
             title: "We don’t just build websites — we create digital experiences that convert."
         },
         {
-            style: "from-green-400 to-blue-500", 
+            style: "from-green-400 to-blue-500",
             title: "We design and develop modern, scalable solutions for your business growth."
         },
         {
-            style: "from-red-400 to-cyan-500", 
+            style: "from-red-400 to-cyan-500",
             title: "From idea to launch, we craft powerful web and AI-driven applications."
         },
         {
@@ -99,6 +99,7 @@ export default function Home() {
     const [text, setText] = useState("");
     const [charIndex, setCharIndex] = useState(0);
     const [arrow, setArrow] = useState("");
+
 
     useEffect(() => {
         const currentWord = topics[topicIndex];
@@ -131,14 +132,14 @@ export default function Home() {
     const [tagIndex, setTagIndex] = useState(0);
 
     useEffect(() => {
-        
+
         const interval = setInterval(() => {
             setTagIndex(prev => {
-                if(prev<tagsLines.length-1) return prev+1;
+                if (prev < tagsLines.length - 1) return prev + 1;
                 else return 0;
             });
         }, 3000);
-        
+
         return () => clearInterval(interval);
     }, [tagsLines.length]);
 
@@ -204,7 +205,7 @@ export default function Home() {
                     <p className="mt-4 text-slate-400 text-5xl md:text-5xl text-white">
                         We have developed more <span className="bg-gradient-to-r from-indigo-500 to-pink-500 bg-clip-text text-transparent">scalable and optimized project</span> with our goal oriented
                     </p>
-                        <PortfolioSlider />                        
+                    <PortfolioSlider />
                 </div>
             </section>
 
@@ -219,7 +220,7 @@ export default function Home() {
                             We focus on current creative idea for <br />
                             <span className="font-bold bg-gradient-to-br from-indigo-500 to-pink-500 bg-clip-text text-transparent">
                                 business of client, performance, and long-term success
-                            </span><br/> for your business.
+                            </span><br /> for your business.
                         </p>
 
                         <ul className="mt-8 space-y-4 text-slate-300">
@@ -235,19 +236,19 @@ export default function Home() {
                             “We don’t just build websites —
                             we create digital experiences that convert.”
                         </p>
-                        
+
                     </div>
-                    
+
                 </div>
-                <div 
-                    className="flex mt-10" 
+                <div
+                    className="flex mt-10"
                     onMouseEnter={() => {
                         setArrow("transition delay-150 duration-300 ease-in-out hover:rotate-45");
-                    }} 
+                    }}
                     onClick={() => navigate("/about")}
                 >
                     <button
-                        
+
                         className="mx-10 px-8 py-4 rounded-full bg-gradient-to-r from-indigo-500 to-pink-500 font-semibold hover:scale-105 transition"
                     >
                         More About
@@ -304,19 +305,19 @@ export default function Home() {
                             className="bg-gray-900 hover:bg-gradient-to-br hover:from-gray-950 to-gray-1000 hover:border-[0.1px] rounded-3xl p-8 shadow-lg hover:shadow-indigo-500/50 transition transform hover:-translate-y-2"
                         >
                             <div className="text-4xl mb-4 flex items-center">
-  {service.icon}
-  <div 
-    className="ml-auto cursor-pointer"
-    onClick={
-        () => {
-            handleNavigate(service.path);
-            window.scrollTo({ top: 0, behavior: "smooth" });
-        }
-    }
-  >
-    <FaLocationArrow />
-  </div>
-</div>
+                                {service.icon}
+                                <div
+                                    className="ml-auto cursor-pointer"
+                                    onClick={
+                                        () => {
+                                            handleNavigate(service.path);
+                                            window.scrollTo({ top: 0, behavior: "smooth" });
+                                        }
+                                    }
+                                >
+                                    <FaLocationArrow />
+                                </div>
+                            </div>
                             <h2 className="text-2xl font-semibold text-indigo-400 mb-2">
                                 {service.title}
                             </h2>
@@ -362,7 +363,9 @@ export default function Home() {
                     Let’s build something amazing together.
                 </p>
 
-                <button className="mt-10 px-10 py-4 rounded-full bg-white text-indigo-600 font-semibold hover:scale-105 transition">
+                <button
+                    onClick={() => navigate("/contact")}
+                    className="mt-10 px-10 py-4 rounded-full bg-white text-indigo-600 font-semibold hover:scale-105 transition">
                     Contact Us
                 </button>
             </section>
