@@ -2,6 +2,7 @@ import uiux from "./assets/images/uiux1.jpg";
 import ecommerce from "./assets/images/ecommerce.jpg";
 import iot from "./assets/images/iot.png";
 import mobileapp from "./assets/images/mobileapp.png";
+import webdev from "./assets/images/webdev.png";
 
 export const accordionsWeb = [
     {
@@ -174,11 +175,11 @@ export const accordionsMobileApp = [
 export const services = [
     {
         "path": "/web-service",
-        "element": "<AIService />",
+        "element": "<WebService />",
         "title": "Web designing and development",
         "description": "We build fast, scalable, and modern websites using React, Tailwind CSS, and other cutting-edge technologies.",
         "icon": "💻",
-        "image": "https://ix-marketing.imgix.net/image2_rush-order-tees.png?auto=format,compress&w=1946",
+        "image": webdev ?? null,
         "accordion": accordionsWeb
     },
     {
