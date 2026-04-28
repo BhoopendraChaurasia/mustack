@@ -23,7 +23,7 @@ export const CategoryService = () => {
                     <div
                         key={index}
                         onClick={() => navigate(service.path)}
-                        className={`${pathname === service.path && "border-white/10 bg-white/10"} flex items-center justify-between border border-transparent hover:border-white/10 bg-white/5 hover:bg-white/10 px-4 py-3 rounded-xl cursor-pointer transition-all duration-300 group`}
+                    className={`${pathname === service.path && "border-white/10 bg-white/10"} flex items-center justify-between border border-transparent hover:border-white/10 bg-white/5 hover:bg-white/10 px-4 py-3 rounded-xl cursor-pointer transition-all duration-300 group`}
                     >
 
                         {/* Left */}
