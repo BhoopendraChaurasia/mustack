@@ -3,6 +3,9 @@ import ecommerce from "./assets/images/ecommerce.jpg";
 import iot from "./assets/images/iot.png";
 import mobileapp from "./assets/images/mobileapp.png";
 import webdev from "./assets/images/webdev.png";
+import { FaGithub, FaLinkedin, FaTwitter, FaMapPin, FaPhone } from "react-icons/fa";
+import { IoIosMail } from "react-icons/io";
+
 
 export const accordionsWeb = [
     {
@@ -292,5 +295,40 @@ export const teams = [
 
 
 
+export const socialLinks = [
+    {
+        Icon: FaGithub,
+        link: "https://github.com/bhoopendrachaurasia",
+        label: "GitHub",
+    },
+    {
+        Icon: FaLinkedin,
+        link: "https://www.linkedin.com/company/112393296",
+        label: "LinkedIn",
+    },
+    {
+        Icon: FaTwitter,
+        link: "https://twitter.com",
+        label: "Twitter",
+    },
+];
 
+
+export const getInTouch = [
+    {
+        Icon: IoIosMail,
+        title: "Email",
+        value: "abc@gmail.com"
+    },
+    {
+        Icon: FaPhone,
+        title: "Phone",
+        value: "+91 8827975482"
+    },
+    {
+        Icon: FaMapPin,
+        title: "Location",
+        value: "Hyderabad, India"
+    },
+]
 

@@ -16,12 +16,15 @@ import UiUxServices from './pages/UiUx'
 import BackendServices from './pages/backendServices'
 import EcommerceServices from './pages/EcommerceServices'
 import { HashRouter as Router, Routes, Route } from 'react-router-dom'
+import ScrollTop from "./components/ScrollTop";
 
 function App() {
+
   return (
     <>
       <Router>
         <Header />
+        <ScrollTop />
         <Routes>
           <Route path="/" element={<Home />}></Route>
           <Route path="/about" element={<About />}></Route>
