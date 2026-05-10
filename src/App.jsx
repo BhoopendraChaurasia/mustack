@@ -13,7 +13,7 @@ import IotService from './pages/IotService'
 import AppService from './pages/AppService'
 import WebService from './pages/WebService'
 import UiUxServices from './pages/UiUx'
-import BackendServices from './pages/backendServices'
+import BackendServices from './pages/BackendServices'
 import EcommerceServices from './pages/EcommerceServices'
 import { HashRouter as Router, Routes, Route } from 'react-router-dom'
 import ScrollTop from "./components/ScrollTop";
